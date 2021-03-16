@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+  </head>
+  <body>
+    {% if names and data %}
+    <div class="fir_div">
+
+    <table>
+      <thead>
+        <th>
+          Id
+        </th>
+        <th>
+        Name
+        </th>
+        <th>
+          Year
+        </th>
+        <th>
+          Birth Date
+        </th>
+      </thead>
+
+      {% for en in names %}
+
+      <tr>
+
+        <td>{{ en.id_stud }}</td>
+        <td>{{ en.name }}</td>
+        <td>{{ en.year }}</td>
+
+      {% endfor %}
+
+
+
+
+      {% for i in data %}
+
+      <td>{{ i.birth_date }}</td>
+
+      {% endfor %}
+
+    </tr>
+
+    </table>
+      {% else %}
+      <p>No Database </p>
+      {% endif %}
+    </div>
+
+
+  </body>
+</html>
